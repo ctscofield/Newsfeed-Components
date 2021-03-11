@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'My own example',
+    date: 'March 10, 2021',
+    firstParagraph: `I`,
+
+    secondParagraph: `Like`,
+
+    thirdParagraph: `The last season of Game of Thrones`
   }
 ];
 
@@ -116,7 +125,7 @@ const data = [
 */
 const appender = document.querySelector(".articles");
 
-function articleMaker({obj}) {
+function articleMaker(data) {
   const article = document.createElement("div");
   const artTitle = document.createElement("h2");
   const date = document.createElement("p");
@@ -143,8 +152,8 @@ function articleMaker({obj}) {
   article.appendChild(par3);
   article.appendChild(button);
 
-  article.addEventListener("click", function() {
-    button.classList.toggle("article-open")
+  button.addEventListener("click", () => {
+    article.classList.toggle("article-open")
   });
 
   return article; 
